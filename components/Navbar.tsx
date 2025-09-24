@@ -61,8 +61,8 @@ export default function Navbar() {
             <button className="hidden md:block text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">
               登录
             </button>
-            <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
-              立即体验
+            <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-full text-sm md:text-base font-medium hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105 hover:from-green-400 hover:to-emerald-500">
+              开始使用
             </button>
 
             <button

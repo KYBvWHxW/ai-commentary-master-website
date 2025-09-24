@@ -4,14 +4,14 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   const videoThumbnails = [
-    { id: 1, title: '大唐狄公案', type: '古装悬疑', views: '2.3M' },
-    { id: 2, title: '繁花', type: '都市剧情', views: '1.8M' },
-    { id: 3, title: '三体', type: '科幻', views: '3.1M' },
-    { id: 4, title: '漫长的季节', type: '悬疑', views: '2.5M' },
-    { id: 5, title: '去有风的地方', type: '治愈', views: '1.2M' },
-    { id: 6, title: '狂飙', type: '犯罪', views: '4.2M' },
-    { id: 7, title: '人世间', type: '年代', views: '2.8M' },
-    { id: 8, title: '开端', type: '悬疑', views: '2.1M' },
+    { id: 1, title: '大唐狄公案', type: '古装悬疑', duration: '解说时长 12:30', image: '/thumb1.jpg' },
+    { id: 2, title: '繁花', type: '都市剧情', duration: '解说时长 15:20', image: '/thumb2.jpg' },
+    { id: 3, title: '三体', type: '科幻巨制', duration: '解说时长 18:45', image: '/thumb3.jpg' },
+    { id: 4, title: '漫长的季节', type: '悬疑推理', duration: '解说时长 14:10', image: '/thumb4.jpg' },
+    { id: 5, title: '去有风的地方', type: '治愈田园', duration: '解说时长 11:25', image: '/thumb5.jpg' },
+    { id: 6, title: '狂飙', type: '犯罪动作', duration: '解说时长 16:30', image: '/thumb6.jpg' },
+    { id: 7, title: '人世间', type: '年代史诗', duration: '解说时长 20:15', image: '/thumb7.jpg' },
+    { id: 8, title: '开端', type: '循环悬疑', duration: '解说时长 13:50', image: '/thumb8.jpg' },
   ]
 
   return (
@@ -30,19 +30,19 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
             AI解说大师
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-10 font-light">
             一键成片助力智能影视剪辑
           </p>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-green-500/50 transition-all duration-300"
+            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:from-green-400 hover:to-emerald-500"
           >
-            试约演示
+            预约演示
           </motion.button>
         </motion.div>
 
@@ -67,15 +67,19 @@ export default function HeroSection() {
                   {video.type}
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-white font-semibold text-sm mb-1">{video.title}</h3>
-                  <p className="text-gray-300 text-xs flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-                    </svg>
-                    {video.views}
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <h3 className="text-white font-bold text-sm mb-1 line-clamp-1">{video.title}</h3>
+                  <p className="text-green-400 text-xs opacity-90">
+                    {video.duration}
                   </p>
+                </div>
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-16 h-16 bg-green-500/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                    </svg>
+                  </div>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
